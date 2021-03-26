@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        include_once("Conta.class.php");
+        include_once("Autoload.class.php");
 
         $conta = new Conta( "000234586654" );
         
