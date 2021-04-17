@@ -1,15 +1,15 @@
 <?php
-include_once("UserModel.php");
-include_once("../conex.php");
+include_once("Autoload.class.php");
 //regra de inserção de dados
 if (isset($_GET["submit"])) {
     if ($_GET["submit"] == "gravar") {  
         $user = new UserModel( $_GET["username"], $_GET["password"], $_GET["fullname"]);
-        $user->setCon($con);
         $user->gravar();
     }
+    header('Location: ../index.php');
+} else {
+    $user = new UserModel();
+    $clientes = $user->retornaClientes();
+    echo json_encode($clientes);
 }
-
-unset($user);
-header('Location: ../index.php');
 ?>

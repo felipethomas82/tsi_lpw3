@@ -10,6 +10,7 @@
             $this->username = $username;
             $this->password = $password;
             $this->name = $name;
+            $this->con = DB::newConnection();
         }
 
 
@@ -23,10 +24,6 @@
 
         public function setName($name) {
             $this->name = $name;
-        }
-
-        public function setCon( $con ) {
-            $this->con = $con;
         }
 
         public function gravar() {
@@ -78,11 +75,6 @@
                     echo "User not found";
                 }
             }
-        }
-
-        public function __destruct()
-        {
-            echo "FIMMMMMMMMMMMM";
         }
     }
 ?>
